@@ -1,0 +1,76 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+img, picture, svg, video {
+	display: block;
+	max-width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+    font-family: sans-serif;
+    background-color: aqua;
+}
+
+.calculator-grid {
+    display: grid;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    grid-template-columns: repeat(4, 70px);
+    grid-gap: 1px;
+}
+
+.calculator-grid .output {
+    min-height: 75px;
+    width: 100%;
+    background-color: rgb(15, 24, 15);
+    padding: 7.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    
+    grid-column: 1 / -1;
+}
+
+.calculator-grid .output .current-operand {
+    width: 100%;
+    font-size: 25px;
+    word-break: break-all;
+}
+
+.calculator-grid .output .current-operand, 
+.calculator-grid .output .previous-operand {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.calculator-grid > button {
+    height: 70px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(83, 243, 243);
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+.calculator-grid > button:hover {
+    opacity: .75;
+}
+
+.span-two {
+    grid-column: span 2;
+}
